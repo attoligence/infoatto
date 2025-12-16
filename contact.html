@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Attoligence Technologies</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <style>
+    /* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BASE ================= */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #222;
+  line-height: 1.6;
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ================= LAYOUT ================= */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= HEADER ================= */
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f4c75;
+}
+
+.nav a {
+  margin-left: 20px;
+  font-weight: 500;
+  color: #333;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* ================= HERO ================= */
+.hero {
+  background: #f8fafc;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.primary-btn {
+  background: #0f4c75;
+  color: #ffffff;
+}
+
+.secondary-btn {
+  background: #1eb980;
+  color: #ffffff;
+}
+
+/* ================= SECTIONS ================= */
+.section-title {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.services,
+.jobs,
+.why-us,
+.interview {
+  padding: 70px 0;
+}
+
+/* ================= GRID ================= */
+.services-grid,
+.jobs-grid,
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* ================= CARDS ================= */
+.service-card,
+.job-card,
+.why-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.service-card h3,
+.why-card h3 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #555;
+}
+
+/* ================= SERVICE DETAIL (Services Page) ================= */
+.service-detail {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.service-detail.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-detail img {
+  width: 45%;
+  border-radius: 6px;
+}
+
+.service-detail h2 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+}
+
+.service-detail ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+/* ================= INTERVIEW SECTION ================= */
+.interview {
+  background: #f1f5f9;
+}
+
+/* ================= BOOKING FORM ================= */
+.booking-form {
+  max-width: 700px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.booking-form textarea {
+  grid-column: span 2;
+  min-height: 100px;
+}
+
+.booking-form button {
+  grid-column: span 2;
+}
+
+/* ================= TWO COLUMN ================= */
+.two-col {
+  display: flex;
+  gap: 40px;
+}
+
+/* ================= TIMELINE ================= */
+.timeline {
+  border-left: 3px solid #0f4c75;
+  padding-left: 30px;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+}
+
+.timeline-item h3 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 5px;
+}
+
+/* ================= MAP ================= */
+.map-section iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #0f4c75;
+  color: #ffffff;
+  padding: 50px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.footer a {
+  display: block;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+}
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">Attoligence</div>
+
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="mock-interview.html">Mock Interview</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>We’re here to help — HR, BPO, Tech, AI, Cloud, and Training enquiries.</p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT INFO ================= -->
+  <section class="services">
+    <div class="container two-col">
+      <div>
+        <h2>Reach Us</h2>
+        <p><strong>Email (Info):</strong> infoteam@attoligence.com</p>
+        <p><strong>Email (HR):</strong> hrteam@attoligence.com</p>
+        <p><strong>Phone 1:</strong> +91 8897590194</p>
+        <p><strong>Phone 2:</strong> +91 8897590195</p>
+        <p>
+          <strong>Address:</strong><br>
+          Raikode X Road, near National Investment & Manufacturing Zone (NIMZ),<br>
+          Zaheerabad, Sangareddy, Telangana 502257
+        </p>
+
+        <p>
+          <strong>Office Hours:</strong><br>
+          Mon–Fri: 9:30 AM – 6:30 PM<br>
+          Sat: 10:00 AM – 2:00 PM<br>
+          Sun: Closed
+        </p>
+
+        <a href="tel:+918897590194" class="btn primary-btn">Call Now</a>
+      </div>
+
+      <!-- ================= CONTACT FORM ================= -->
+      <div>
+        <h2>Send an Enquiry</h2>
+        <p>For partnerships, hiring, training, or demos — we’ll respond quickly.</p>
+
+        <form id="contactForm" class="booking-form">
+          <input type="text" id="cname" placeholder="Full Name" required>
+          <input type="email" id="cemail" placeholder="Email" required>
+          <input type="tel" id="cphone" placeholder="Phone" required>
+
+          <select id="cpurpose" title="Select the purpose of your enquiry" required>
+            <option value="">Purpose</option>
+            <option>HR Services</option>
+            <option>Recruitment</option>
+            <option>Mock Interview</option>
+            <option>Training & Development</option>
+            <option>BPO Services</option>
+            <option>AI / Tech Solutions</option>
+            <option>General Enquiry</option>
+          </select>
+
+          <textarea id="cmessage" placeholder="Briefly describe your requirement…" required></textarea>
+
+          <button type="submit" class="btn primary-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GOOGLE MAPS (FULL WIDTH) ================= -->
+  <section class="map-section">
+    <iframe
+      src="https://www.google.com/maps?q=Raikode%20X%20Road%20Zaheerabad&output=embed"
+      width="100%"
+      height="400"
+      title="Google Maps - Attoligence Technologies Location"
+      class="map-iframe"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- ================= QUICK HELP ================= -->
+  <section class="jobs">
+    <div class="container">
+      <h2 class="section-title">Quick Help</h2>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>How fast do you respond?</h3>
+          <p>We typically respond within one business day.</p>
+        </div>
+        <div class="why-card">
+          <h3>Do you serve startups and enterprises?</h3>
+          <p>Yes, we work with startups, SMEs, and large enterprises.</p>
+        </div>
+        <div class="why-card">
+          <h3>Can we schedule a demo?</h3>
+          <p>Absolutely. Use the form above to request a demo.</p>
+        </div>
+        <div class="why-card">
+          <h3>Do you provide on-site training?</h3>
+          <p>Yes, on-site and online training options are available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Attoligence</h3>
+        <p>HR & Recruitment • BPO • AI Automation • Cloud</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <a href="services.html">Services</a>
+        <a href="mock-interview.html">Mock Interview</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>infoteam@attoligence.com</p>
+        <p>hrteam@attoligence.com</p>
+        <p>+91 8897590194</p>
+        <p>+91 8897590195</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Attoligence Technologies Pvt. Ltd. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
