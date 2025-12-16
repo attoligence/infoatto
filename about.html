@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Attoligence Technologies</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <style>
+    /* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BASE ================= */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #222;
+  line-height: 1.6;
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ================= LAYOUT ================= */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= HEADER ================= */
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f4c75;
+}
+
+.nav a {
+  margin-left: 20px;
+  font-weight: 500;
+  color: #333;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* ================= HERO ================= */
+.hero {
+  background: #f8fafc;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.primary-btn {
+  background: #0f4c75;
+  color: #ffffff;
+}
+
+.secondary-btn {
+  background: #1eb980;
+  color: #ffffff;
+}
+
+/* ================= SECTIONS ================= */
+.section-title {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.services,
+.jobs,
+.why-us,
+.interview {
+  padding: 70px 0;
+}
+
+/* ================= GRID ================= */
+.services-grid,
+.jobs-grid,
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* ================= CARDS ================= */
+.service-card,
+.job-card,
+.why-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.service-card h3,
+.why-card h3 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #555;
+}
+
+/* ================= SERVICE DETAIL (Services Page) ================= */
+.service-detail {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.service-detail.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-detail img {
+  width: 45%;
+  border-radius: 6px;
+}
+
+.service-detail h2 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+}
+
+.service-detail ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+/* ================= INTERVIEW SECTION ================= */
+.interview {
+  background: #f1f5f9;
+}
+
+/* ================= BOOKING FORM ================= */
+.booking-form {
+  max-width: 700px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.booking-form textarea {
+  grid-column: span 2;
+  min-height: 100px;
+}
+
+.booking-form button {
+  grid-column: span 2;
+}
+
+/* ================= TWO COLUMN ================= */
+.two-col {
+  display: flex;
+  gap: 40px;
+}
+
+/* ================= TIMELINE ================= */
+.timeline {
+  border-left: 3px solid #0f4c75;
+  padding-left: 30px;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+}
+
+.timeline-item h3 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 5px;
+}
+
+/* ================= MAP ================= */
+.map-section iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #0f4c75;
+  color: #ffffff;
+  padding: 50px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.footer a {
+  display: block;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+}
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">Attoligence</div>
+
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="mock-interview.html">Mock Interview</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container">
+      <h1>About Attoligence Technologies</h1>
+      <p>Empowering businesses through innovation, technology, and people solutions.</p>
+    </div>
+  </section>
+
+  <!-- ================= WHO WE ARE ================= -->
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">Who We Are</h2>
+      <p>
+        Attoligence Technologies Pvt. Ltd. is a Hyderabad-based technology-driven
+        consulting and services company. We specialize in HR & Recruitment, BPO &
+        Call Center Solutions, Web and App Development, AI Automation, and Business
+        Consulting. We help organizations scale efficiently by blending human
+        intelligence with digital innovation.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= MISSION & VISION ================= -->
+  <section class="interview">
+    <div class="container two-col">
+      <div>
+        <h2>Our Mission</h2>
+        <p>
+          To empower businesses by connecting people, processes, and technology
+          to drive innovation, productivity, and long-term growth.
+        </p>
+      </div>
+
+      <div>
+        <h2>Our Vision</h2>
+        <p>
+          To be India’s most trusted business partner, delivering world-class
+          digital and people solutions globally with integrity and excellence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CORE VALUES ================= -->
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">Our Core Values</h2>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>Integrity</h3>
+          <p>Honesty, transparency, and accountability in everything we do.</p>
+        </div>
+        <div class="why-card">
+          <h3>Innovation</h3>
+          <p>Technology-led solutions for smarter business outcomes.</p>
+        </div>
+        <div class="why-card">
+          <h3>Client Success</h3>
+          <p>Your success is our mission and measure.</p>
+        </div>
+        <div class="why-card">
+          <h3>Excellence</h3>
+          <p>Precision in execution and quality at every step.</p>
+        </div>
+        <div class="why-card">
+          <h3>Teamwork</h3>
+          <p>Collaboration, respect, and shared ownership.</p>
+        </div>
+        <div class="why-card">
+          <h3>Learning</h3>
+          <p>Continuous improvement and adaptability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LEADERSHIP ================= -->
+  <section class="jobs">
+    <div class="container">
+      <h2 class="section-title">Leadership Team</h2>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="ajay singitham.jpeg" alt="Ajay Singitham">
+          <h3>Ajay Singitham</h3>
+          <p>Founder & CEO</p>
+        </div>
+
+        <div class="service-card">
+          <img src="coo.jpeg" alt="COO">
+          <h3>COO</h3>
+          <p>Chief Operating Officer<br>Operations & Strategy</p>
+        </div>
+
+        <div class="service-card">
+          <img src="tech.jpeg" alt="Tech Lead">
+          <h3>Tech Lead</h3>
+          <p>Web & AI Solutions</p>
+        </div>
+
+        <div class="service-card">
+          <img src="hr.jpeg" alt="HR Lead">
+          <h3>HR Lead</h3>
+          <p>Recruitment & Payroll</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAPABILITIES & STATS ================= -->
+  <section class="interview">
+    <div class="container">
+      <h2 class="section-title">Why Attoligence</h2>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <h3>92%</h3>
+          <p>Client Satisfaction</p>
+        </div>
+        <div class="why-card">
+          <h3>88%</h3>
+          <p>On-time Delivery</p>
+        </div>
+        <div class="why-card">
+          <h3>80%</h3>
+          <p>Offer-to-Join Ratio</p>
+        </div>
+        <div class="why-card">
+          <h3>End-to-End Capability</h3>
+          <p>HR + Tech + BPO under one roof.</p>
+        </div>
+        <div class="why-card">
+          <h3>AI in the Loop</h3>
+          <p>Automation and analytics embedded into workflows.</p>
+        </div>
+        <div class="why-card">
+          <h3>Compliance & Security</h3>
+          <p>Policy-driven, audit-ready delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= JOURNEY TIMELINE ================= -->
+  <section class="services">
+    <div class="container">
+      <h2 class="section-title">Our Journey</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>2025 — Incorporation</h3>
+          <p>Attoligence Technologies Pvt. Ltd. established; HR Services and BPO launched.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>2025 — AI & Web Delivery</h3>
+          <p>Introduced AI chatbots, automation pilots, and full-stack development services.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>2026 — Scale & Partnerships</h3>
+          <p>Expanded delivery capacity, college & company collaborations, and enterprise SLAs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Attoligence</h3>
+        <p>HR & Recruitment • BPO • AI Automation • Cloud</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <a href="services.html">Services</a>
+        <a href="mock-interview.html">Mock Interview</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>infoteam@attoligence.com</p>
+        <p>hrteam@attoligence.com</p>
+        <p>+91 8897590194</p>
+        <p>+91 8897590195</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Attoligence Technologies Pvt. Ltd. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // ================= MOBILE MENU TOGGLE =================
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+}
+
+// ================= CLOSE MENU ON LINK CLICK (MOBILE) =================
+const navLinks = document.querySelectorAll(".nav a");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    if (navMenu.classList.contains("active")) {
+      navMenu.classList.remove("active");
+    }
+  });
+});
+
+// ================= SMOOTH SCROLL FOR INTERNAL LINKS =================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
+});
+  </script>
+</body>
+</html>
